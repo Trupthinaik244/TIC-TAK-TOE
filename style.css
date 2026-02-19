@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+    background-color: rgb(4, 99, 34);
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+   gap: 5px;
+
+    width: 60vmin;
+    justify-content: end;
+}
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+.box{
+   background-color: beige;
+
+    height: 18vmin;
+    width: 18vmin;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgb(11, 4, 4);
+    font-size: 8vmin;
+   color: red;
+}
+
+#resetbtn{
+    padding: 1rem;
+    color: red;
+    font-size: large;
+    font-style: italic;
+    background-color: rgb(13, 28, 41);
+    color: aliceblue;
+    border-radius: 20px;
+    border: none;
+}
+#newbtn{
+    padding: 1rem;
+    color: red;
+    font-size: large;
+    font-style: italic;
+    background-color: rgb(9, 25, 40);
+    color: aliceblue;
+    border-radius: 20px;
+    border: none;
+}
+#msg{
+    color: aliceblue;
+    font-size: 5vmin;
+}
+.msg-container{
+    height: 40vmin;
+}
+.hide{
+    display: none;
+}
+
+
+
+
+let boxs=document.querySelectorAll(".box");
+let resetbtn=document.querySelector("#resetbtn");
+let newgamebtn=document.querySelector("#newbtn");
+let msgcontainer=document.querySelector(".mwg-container");
+let msg=document.querySelector("#msg");
+
+
+let turnO=true;
+const winpatterns=[
+    [0,1,2],
+    [0,3,6],
+    [0,4,8],
+    [1,4,7],
+    [2,5,8],
+    [2,4,6],
+    [3,4,5],
+    [6,7,8],
+];
+const resetgame=()=>{
+    turnO=true;
+    enableboxs();
+    msgcontainer.classList.add("hide");
+};
+
