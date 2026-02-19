@@ -70,27 +70,3 @@ body{
 
 
 
-let boxs=document.querySelectorAll(".box");
-let resetbtn=document.querySelector("#resetbtn");
-let newgamebtn=document.querySelector("#newbtn");
-let msgcontainer=document.querySelector(".mwg-container");
-let msg=document.querySelector("#msg");
-
-
-let turnO=true;
-const winpatterns=[
-    [0,1,2],
-    [0,3,6],
-    [0,4,8],
-    [1,4,7],
-    [2,5,8],
-    [2,4,6],
-    [3,4,5],
-    [6,7,8],
-];
-const resetgame=()=>{
-    turnO=true;
-    enableboxs();
-    msgcontainer.classList.add("hide");
-};
-
